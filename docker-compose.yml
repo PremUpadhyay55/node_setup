@@ -2,6 +2,6 @@ version: '3.0'
 
 services:
   nms:
-      image: asesha68/nms:1.0.3
+      image: asesha68/nms:1.0.4
       ports:
         - "8000:8000"
