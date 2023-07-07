@@ -11,7 +11,7 @@ services:
     ports:
       - "9000:9000"
   nms:
-      image: asesha68/nms:1.0.4
+      image: asesha68/nms:1.0.5
       ports:
         - "8000:8000"
 volumes:
