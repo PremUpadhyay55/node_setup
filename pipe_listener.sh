@@ -1,5 +1,11 @@
+APP_DIR=/app
 PIPE_DIR=/app/docker_pipes
 PIPE_FILE=/app/docker_pipes/project_app_pipe
+if [ -d "$APP_DIR" ]
+then
+        echo "APP DIR Created"
+        mkdir /app
+fi
 if [ -d "$PIPE_DIR" ] 
 then
         if [ -e "$PIPE_FILE" ]
