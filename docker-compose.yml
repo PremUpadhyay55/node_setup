@@ -19,4 +19,4 @@ services:
       - /app/docker_pipes:/app/docker_pipes
 
 volumes:
-  staticfiles
+  staticfiles:
