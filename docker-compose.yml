@@ -1,0 +1,22 @@
+version: '3.0'
+
+services:
+  nms:
+    image: asesha68/nms:1.0.36
+    command: >
+      bash -c
+         "python manage.py migrate &&
+          python manage.py collectstatic --noinput &&
+          gunicorn --bind 0.0.0.0:8000 nms_project_settings.wsgi:application &&
+          python manage.py collectstatic --noinput "
+
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app/databases:/home/ubuntu/nms_project/database
+      - staticfiles:/app/static
+      - /home/ubuntu:/home/ubuntu
+      - /app/docker_pipes:/app/docker_pipes
+
+volumes:
+  staticfiles:
