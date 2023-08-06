@@ -24,7 +24,7 @@ do
      echo "just few more moments ...."
     fi
 done
-
+sleep 10
 sudo mkdir /nms_app
 sudo cp -rp /home/ubuntu/nms_project/node_mgmt_system/nms_app/static/ /nms_app/
 sudo chown -R www-data:www-data /nms_app
