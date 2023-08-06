@@ -26,6 +26,6 @@ done
 
 sudo mkdir /nms_app
 sudo cp -rp /home/ubuntu/nms_project/node_mgmt_system/nms_app/static/ /nms_app/
-sudo chown -R ubuntu:ubuntu /nms_app
+sudo chown -R www-data:www-data /nms_app
 sudo systemctl restart nginx
 echo "All done"
