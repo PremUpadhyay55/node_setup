@@ -3,7 +3,7 @@ sudo apt-get update
 sudo apt-get install nginx -y
 sudo rm /etc/nginx/sites-available/*
 sudo rm /etc/nginx/sites-enabled/*
-sudo cp ~/node_setup/nms.cfg /etc/nginx/sites-available/
+sudo cp ./nms.cfg /etc/nginx/sites-available/
 sudo ln -s /etc/nginx/sites-available/nms.cfg /etc/nginx/sites-enabled/
 sudo systemctl start nginx
 echo "Installing docker and docker compose"
@@ -14,7 +14,8 @@ echo "First Checking Pipe and starting"
 nohup ./pipe_listener.sh &
 echo "Starting the NMS Docker "
 sudo docker-compose up -d
-sudo cp -rp /home/ubuntu/nms_project/node_mgmt_system/nms_app/static/ /app/
-sudo chown -R www-data:www-data /app
+sudo mkdir /nms_app
+sudo cp -rp /home/ubuntu/nms_project/node_mgmt_system/nms_app/static/ /nms_app/
+sudo chown -R ubuntu:ubuntu /nms_app
 sudo systemctl restart nginx
 echo "All done"
