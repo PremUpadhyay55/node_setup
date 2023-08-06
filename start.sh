@@ -14,7 +14,16 @@ echo "First Checking Pipe and starting"
 nohup ./pipe_listener.sh &
 echo "Starting the NMS Docker "
 sudo docker-compose up -d
-sleep 10
+while true
+   if [ -d /home/ubuntu/nms_project/node_mgmt_system/nms_app/static ] ;
+   then
+      echo "Almost done.."
+      exit
+   else
+     echo "just few more moments ...."
+    fi
+done
+
 sudo mkdir /nms_app
 sudo cp -rp /home/ubuntu/nms_project/node_mgmt_system/nms_app/static/ /nms_app/
 sudo chown -R ubuntu:ubuntu /nms_app
