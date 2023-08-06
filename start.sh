@@ -19,7 +19,7 @@ do
    if [ -d /home/ubuntu/nms_project/node_mgmt_system/nms_app/static ] ;
    then
       echo "Almost done.."
-      exit
+      break
    else
      echo "just few more moments ...."
     fi
