@@ -2,6 +2,7 @@ IP=$(curl -s ifconfig.me)
 echo "Installing NGINX"
 sudo apt-get update
 sudo apt-get install nginx -y
+sudo apt-get install dos2unix -y
 sudo rm /etc/nginx/sites-available/*
 sudo rm /etc/nginx/sites-enabled/*
 sed -i -e 's/localhost/'$IP'/g' nms.cfg
