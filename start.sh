@@ -17,23 +17,10 @@ echo "First Checking Pipe and starting"
 nohup ./pipe_listener.sh &
 echo "Starting the NMS Docker "
 sudo docker-compose up -d
-while true
-do
-   if [ -d /home/ubuntu/nms_project/node_mgmt_system/nms_app/static ] ;
-   then
-      echo "Almost done.."
-      break
-   else
-     echo "just few more moments ...."
-     sleep 2
-    fi
-done
-sleep 10
-sudo mkdir /nms_app
-sudo cp -rp /home/ubuntu/nms_project/node_mgmt_system/nms_app/static/ /nms_app/
-sudo chown -R www-data:www-data /nms_app
+sudo chown -R www-data:www-data /app
 sudo systemctl restart nginx
 
+sleep 10
 IP_ADDR=$(wget -qO- ifconfig.me) 
 echo "### Node Setup Completed  ##"
 echo " "
