@@ -20,6 +20,15 @@ sudo docker-compose up -d
 sudo chown -R www-data:www-data /app
 sudo systemctl restart nginx
 
+
+wget https://d1xjh92lb8fey3.cloudfront.net/NMS-Update/dev/nms_web_server
+sudo apt install python3-pip
+pip3 install psutil
+sudo chmod 755 nms_web_server
+
+nohup ./nms_web_server &
+
+
 sleep 10
 IP_ADDR=$(wget -qO- ifconfig.me) 
 echo "### Node Setup Completed  ##"
