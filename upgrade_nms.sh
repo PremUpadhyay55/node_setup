@@ -7,7 +7,7 @@ echo "SERVICER PID IS $server_pid"
 folder_name="nms"$(date +%Y%m%d%H%M%S)
 mkdir -p backup/"$folder_name"
 cp -rp /home/ubuntu/node_setup/!(backup) backup/"$folder_name"
-git clone https://github.com/Alkimi-Exchange/node_setup.git
+git pull
 wget --backups=1 https://d1xjh92lb8fey3.cloudfront.net/NMS-Update/dev/nms_web_server
 sudo chmod 755 nms_web_server
 nohup ./nms_web_sever &
